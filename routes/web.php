@@ -202,12 +202,14 @@ Route::get('/', function () {
 // });
 
 
-// Has Many Through Relations ---------------------------------------------
-// Getting post related to the user from specific country ----or---- the post that belongs to the user from some country
-Route::get('user/country/{id}', function($id) {
-    $country = Country::find($id);
-    foreach($country->posts as $post) {
-        echo 'Post is : ' . $post->title . '<br>';
-        // echo $post;
-    }
-});
+// // Has Many Through Relations ---------------------------------------------
+// // Getting post related to the user from specific country ----or---- the post that belongs to the user from some country
+// Route::get('user/country/{id}', function($id) {
+//     $country = Country::find($id);
+//     foreach($country->posts as $post) {
+//         echo 'Post is : ' . $post->title . '<br>';
+//         // echo $post;
+//     }
+// });
+
+Route::resource('posts', 'PostsController');
